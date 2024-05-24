@@ -1,4 +1,3 @@
-<?php require_once 'includes/aside.code.php'; ?>
 <?php
 	//	Page Title and Heading
 		$pagetitle = 'About';

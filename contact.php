@@ -11,7 +11,7 @@
 	<main>
 		<article id="contact">
 <!-- if not sent: -->
-			<form id="contact-form" method="post" action="" novalidate>
+			<form id="contact-form" method="get" action="/resources/testform.css" novalidate>
 				[errors]
 				<p><label for="name">Name:</label>
 					<input name="name" id="name" type="text" value="[name]">
