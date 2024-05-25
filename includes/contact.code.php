@@ -1,10 +1,9 @@
 <?php 
 	// Configuration
-		$CONFIG['contact']['to'] =
-		'Lucas <dev.ascencao@gmail.com>';
+		$CONFIG['contact']['to'] = 'Lucas <dev.ascencao@gmail.com>';
 	//initialize
 		$name = $email = $subject = $message = '';
-		$errors = ''; //$errors is separeted to reinforce that it is doing a different job
+		$errors = ''; //$errors is separated to reinforce that it is doing a different job
 		$sent = false;
 	//Process Submitted form
 	if (array_key_exists("send", $_POST)) {
@@ -30,16 +29,16 @@
 		$to = $CONFIG['contact']['to'];
 		//$subject already set
 		$message = wordwrap($message, 70, "\r\n");
-		$headers = [
-			'Date' => date('r'),
-			'From' => "$email",
-			'Cc' => "$email",
-		];
+		// Format headers as a string
+        $headers = "Date: " . date('r') . "\r\n";
+        $headers .= "From: $email\r\n";
+        $headers .= "Cc: $email\r\n";
+
 		mail($to, $subject, $message, $headers);
 		$sent = true;
 	}
 	else { //Else, Report Errors
 		$errors = sprintf('<p class="errors">%s</p>',
-					implode('<br>', $errors));
+				implode('<br>', $errors));
 	}	
 	};
