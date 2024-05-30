@@ -1,4 +1,4 @@
-<?php #require_once 'includes/manage-images.code.php'; ?>
+<?php require_once 'includes/manage-images.code.php'; ?>
 <?php
 	//	Page Title and Heading
 		$pagetitle = 'Upload Image';
@@ -12,8 +12,8 @@
 	<main>
 		<article id="editimage">
 			<form method="post" action="" enctype="multipart/form-data" id="editimage-form">
-				<input type="hidden" name="id" value="[id]">
-				[errors]
+				<input type="hidden" name="id" value="<?= $id ?>">
+				<?= $errors ?>
 				<fieldset [disabled]>
 <!-- if($id) get image:
 					<p id="old-image">Current Image<br>
@@ -29,9 +29,9 @@ endif; -->
 					</p>
 <!-- endif -->
 					<p><label>Title<br>
-						<input type="text" name="title" value="[title]"></label></p>
+						<input type="text" name="title" value="<?= $title ?>"></label></p>
 					<p><label>Description<br>
-						<textarea name="description">[description]</textarea></label></p>
+						<textarea name="description"><?= $description ?></textarea></label></p>
 
 				</fieldset>
 				<p id="control">
